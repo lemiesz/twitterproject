@@ -6,7 +6,7 @@ lat = 40.110588
 
 for i in range(100):
 	geocode = str(lat) + ',' + str(lon) + ',' + '100mi'
-	r = api.request('search/tweets', {'geocode' : geocode,'limit' : '100'})
+	r = api.request('statuses/user_timeline', {'geocode' : geocode,'limit' : '100'})
 	for item in r.get_iterator():
 		print item['text']
 	lat+=4
